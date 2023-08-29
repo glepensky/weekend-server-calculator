@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="styles/style.css" rel="stylesheet" media="all" />
+
+    <title>Server Side Calculator</title>
+
+</head>
+
+    <h1>Server Side Calculator 🧮</h1>
+
+
+<body>
+    
+    <input id="firstInput" type="number" placeholder="number">
+
+    <button id="plus" type = "button" >+</button>
+    <button id="minus" type = "button" >-</button>
+    <button id="times" type = "button" >*</button>
+    <button id="divid" type = "button" >/</button>
+
+    <input id="secondInput" type="number" placeholder="number">
+
+    <button id="equal" type = "button" >=</button>
+    <button id="clear" type = "button" >C</button>
+
+
+    <div id="total">0</div>
+
+    <div id="history">
+        <ul>
+        </ul>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/client.js"></script>
+
+</body>
+</html>
