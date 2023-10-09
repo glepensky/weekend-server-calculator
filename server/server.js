@@ -20,17 +20,34 @@ app.listen(port, () => {
 
 const equationsArray = [];
 
-app.get('/equations', (req, res) =>{
-    res.send(equationsArray);
+app.get('/equations', (req, res) => {
+  res.send(equationsArray);
 });
 
 app.post('/equations', (req, res) => {
-    console.log('New equation', req.body);
-    // equation(req.body);
-let result = equation(req.body);
-    equationsArray.push(result);
-    console.log(result);
+  console.log('New equation', req.body);
+  // equation(req.body);
+  let result = equation(req.body);
+  equationsArray.push(result);
+  console.log(result);
 
-    res.sendStatus(200);
+  res.sendStatus(200);
 });
 
+// equation function to perform math
+
+function equation({ first, operator, second }) {
+  first = parseFloat(first);
+  second = parseFloat(second)
+  let result = null;
+  if (operator === '+') {
+    result = first + second
+  } else if (operator === '-') {
+    result = first - second
+  } else if (operator === '*') {
+    result = first * second
+  } else if (operator === '/') {
+    result = first / second
+  }
+  return { first, operator, second, result };
+}
