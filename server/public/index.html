@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link href="styles/style.css" rel="stylesheet" media="all" />
 
     <title>Server Side Calculator</title>
 
 </head>
 
-    <h1>Server Side Calculator 🧮</h1>
+<h1>Server Side Calculator 🧮</h1>
 
 
 <body>
-    
-    <input id="firstInput" type="number" placeholder="number">
 
-    <button id="plus" type = "button" >+</button>
-    <button id="minus" type = "button" >-</button>
-    <button id="times" type = "button" >*</button>
-    <button id="divid" type = "button" >/</button>
+    <div class="container">
+        <div class="calculator">
+            <form onsubmit="findTotal(event)">
+                <div class="display">
+                    <input id="first-number" type="number" step="0.01">
+                </div>
 
-    <input id="secondInput" type="number" placeholder="number">
+                <div>
 
-    <button id="equal" type = "button" >=</button>
-    <button id="clear" type = "button" >C</button>
+                    <button id="plus" onclick="setOperator(event.target.value)" value="+" type="button">+</button>
+                    <button id="minus" onclick="setOperator(event.target.value)" value="-" type="button">-</button>
+
+                    <button id="times" onclick="setOperator(event.target.value)" value="*" type="button">*</button>
+                    <button id="divid" onclick="setOperator(event.target.value)" value="/" type="button">/</button>
+
+                </div>
+                
+                <div class="display">
+                    <input id="second-number" type="number" step="0.01">
+
+                </div>
+
+                <div>
+                    <button type="submit">=</button>
+                    <button type="reset">C</button>
+                </div>
+
+                <div class="total">
+                    <h2><span id="total"></span></h2>
+                </div>
 
 
-    <div id="total">0</div>
-
-    <div id="history">
-        <ul>
-        </ul>
+            </form>
+        </div>
     </div>
-
-
+    <div class="table">
+        <table>
+            <thead>History</thead>
+            <tbody id="equationsTable"></tbody>
+        </table>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts/client.js"></script>
 
 </body>
+
 </html>
