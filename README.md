@@ -11,9 +11,14 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 To do:
 [X] create folder structure
 [X] set up server
-[ ] set up basic HTML structure of calculator
+[X] set up basic HTML structure of calculator
 [ ] 
 [ ] POST method - Create
 [ ] Get method - Read
-[ ] Put method - Update
-[ ] Delete method - Delete 
+[ ] Add function
+[ ] Subtract function
+[ ] Mutiply function
+[ ] Division function
+[ ] Equal function
+[ ] Clear function
+[ ] History append to DOM
