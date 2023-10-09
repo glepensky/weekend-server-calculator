@@ -8,21 +8,20 @@ function setOperator(operator) {
     operatorObject.operator = operator;
 }
 
+// created variable and function to store and update operator object.
+// function is used to update operator property
+
 function findTotal(event) {
     event.preventDefault();
     let firstNumber = document.querySelector('#first-number').value;
     let secondNumber = document.querySelector('#second-number').value;
-    if (!firstNumber || !secondNumber || !operatorObject.operator) {
-        alert('Unable to run equation without both numbers or operator')
-        return;
-    }
+
     let equation = {
         first: firstNumber,
         operator: operatorObject.operator,
         second: secondNumber
     }
     console.log(firstNumber, secondNumber, equation);
-    // if no first number or no second number, alert() and return
 
     fetch('/equations', {
         method: 'POST', body: JSON.stringify(equation),
@@ -35,7 +34,7 @@ function findTotal(event) {
             getEquation();
             displayTotal();
         })
-        // Created new function called getEquation and do a fetch
+
 
         .catch((error) => {
             console.log(error);
@@ -65,7 +64,7 @@ function getEquation() {
 
             let totalDiv = document.querySelector('#total');
 
-            totalDiv.innerHTML = `<h2>${equations[equations.length-1].result}</h2>`;
+            totalDiv.innerHTML = `<h2>${equations[equations.length - 1].result}</h2>`;
 
         }).catch((error) => {
             console.log('Error with request:', error);

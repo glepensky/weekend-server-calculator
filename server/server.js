@@ -6,17 +6,16 @@ const app = express();
 const port = 5001;
 // app.use(bodyParser.json()); 
 
-// express static file serving - public is the folder name
+// express static file serving 
 app.use(express.static('server/public'));
 app.use(express.json());
 
-// Start up our server
+// Start server
 app.listen(port, () => {
   console.log('listening on port', port);
 });
 
-
-// setting up routes
+// set up routes
 
 const equationsArray = [];
 
